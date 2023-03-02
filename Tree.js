@@ -5,7 +5,7 @@ export default class Tree {
 
     buildTreeMaster(inputs) {
         //let array = buildTreePreProcess(inputs);
-        this.root = this.buildTree(inputs, 0, inputs.length);
+        this.root = this.buildTree(inputs, 0, inputs.length - 1);
         //inputs is an array!
         //sort it
         //remove dups
@@ -18,7 +18,7 @@ export default class Tree {
 
     buildTree(inputs, start, end) {
         if (start > end) return null;
-        let mid = start + end / 2;
+        let mid = ~~((start + end) / 2);
 
         let root = new Node(inputs[mid]);
 
